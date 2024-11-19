@@ -25,7 +25,19 @@ class JinySitePartnerServiceProvider extends ServiceProvider
     {
         /* 라이브와이어 컴포넌트 등록 */
         $this->app->afterResolving(BladeCompiler::class, function () {
-            
+            // 파트너 관리
+            Livewire::component('site-partner',
+                \Jiny\Site\Partner\Http\Livewire\SitePartner::class);
+            Livewire::component('site-partner-view',
+                \Jiny\Site\Partner\Http\Livewire\SitePartnerView::class);
+            Livewire::component('site-partner-join',
+                \Jiny\Site\Partner\Http\Livewire\SitePartnerJoin::class);
+            Livewire::component('site-partner-like',
+                \Jiny\Site\Partner\Http\Livewire\SitePartnerLike::class);
+            Livewire::component('site-partner-of-user',
+                \Jiny\Site\Partner\Http\Livewire\SitePartnerOfUser::class);
+            Livewire::component('site-partner-message',
+                \Jiny\Site\Partner\Http\Livewire\SitePartnerMessage::class);
 
         });
     }
